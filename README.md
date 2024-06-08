@@ -1,6 +1,6 @@
 
 # Faculty
-* Changjian Li
+* Changjian Li - [GraphViX Group](https://enigma-li.github.io/)
 * Kartic Subr - [Timely Approximation Group](https://homepages.inf.ed.ac.uk/ksubr/) 
 * Amir Vaxman - [Geometry Processing Group](https://avaxman.github.io/)
 
