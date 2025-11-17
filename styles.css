@@ -1,0 +1,288 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #eee;                  /* light text on dark background */
+  background-color: #2b2b2b;    /* dark grey background */
+}
+
+/* Top Ribbon */
+.top-ribbon {
+  background: #001f3f;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  padding: 6px 0;
+  font-size: 1rem;
+}
+
+/* Navigation Bar */
+nav {
+  background: #111;
+  padding: 12px 0;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
+nav .menu a {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+nav .menu a:hover {
+  color: #fff;
+}
+
+/* Header */
+header {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+/* Slider */
+.slider-wrapper {
+  padding: 50px 0;
+  background: #333;  /* dark slider background */
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 350px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: scale(0.9);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive Slider */
+@media (max-width: 800px) {
+  .slider-container { height: 240px; }
+  header { height: 180px; }
+  .person { width: 45%; }
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Slider Navigation */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  font-size: 1.5rem;
+  user-select: none;
+}
+.arrow.left { left: 15px; }
+.arrow.right { right: 15px; }
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+/* Groups Section */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px 0;
+  justify-items: center;
+}
+.group-card {
+  position: relative;
+  width: 380px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+.group-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.group-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+@media (max-width: 1080px) {
+  .groups-grid { grid-template-columns: 1fr; }
+  .group-card { width: 90%; height: 180px; }
+}
+
+/* News Section */
+#news {
+  background: #2b2b2b;
+  padding: 40px 50px;  /* top/bottom + horizontal padding */
+  margin: 0 auto;
+  max-width: 1100px;   /* constrain width */
+}
+
+/* People Section */
+/*
+#people {
+  padding: 40px 50px;  
+  background: #333;
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 1100px;  
+  margin: 0 auto;     
+  justify-items: center; 
+}
+.person img {
+  width: 50px;          
+  height: 50px;         
+  border-radius: 50%;   
+  object-fit: cover;    
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+*/
+#people-grid {
+ padding: 40px 50px;  
+  background: #333;
+   display: grid !important;                         /* enforce grid */
+  grid-template-columns: repeat(auto-fit, 150px);   /* fixed 150px columns */
+  justify-content: center;                          /* center grid on page */
+  gap: 20px;                                       /* space between items */
+  max-width: 1000px;                               /* optional container width */
+  margin: 0 auto;                                  /* center section */
+}
+
+.person {
+  width:150px;           /* fixed width for each person */
+  text-align: center;
+}
+
+.person img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.person p {
+  margin-top: 8px;
+  color: #eee;
+  font-size: 1rem;
+}
+
+
+/* Footer */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+#news a {
+  color: #63b3ed;           /* bright blue for visibility */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#news a:hover {
+  color: #ffffff;            /* turns white on hover */
+  text-decoration: underline;
+}

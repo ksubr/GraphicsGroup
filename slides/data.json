@@ -1,0 +1,14 @@
+{
+  "slides": [
+    {
+      "image": "ToG25Subr.png",
+      "text": "Soler and Subr (ToG 2025)",
+      "link": "https://homepages.inf.ed.ac.uk/ksubr/research.html#ToG25"
+    },
+    {
+      "image": "CueTipSubr.png",
+      "text": "Memery et al (SIGGRAPH 2025)",
+      "link": "https://homepages.inf.ed.ac.uk/ksubr/research.html#Siggraph2025"
+    }
+  ]
+}
